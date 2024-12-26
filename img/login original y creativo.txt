@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 2 - Login</title>
+    <style>
+        /* Reset CSS básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo de la página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor del formulario */
+        div {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Logo */
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para las etiquetas */
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Estilos para los campos de entrada */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #5f9ea0;
+            outline: none;
+        }
+
+        /* Estilos para el botón de login */
+        button {
+            background-color: #5f9ea0;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4e8b82;
+        }
+
+        /* Estilos para el texto del pie de página */
+        .footer-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .footer-text a {
+            color: #5f9ea0;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para dispositivos pequeños */
+        @media (max-width: 600px) {
+            div {
+                width: 90%;
+                padding: 20px;
+            }
+
+            img {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- Logo -->
+        <img src="img/Logo.png" alt="Logo">
+        
+        <!-- Formulario de login -->
+        <form action="" method="get">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario" required>
+            
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Pie de página con enlaces -->
+        <div class="footer-text">
+            <p>¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
+            <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+        </div>
+    </div>
+</body>
+</html>
