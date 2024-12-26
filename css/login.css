@@ -1,137 +1,122 @@
-{
+/* Reset básico de márgenes y padding */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fondo de la página */
+/* Estilo general de la página */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6e7dff, #ff77e9); /* Fondo degradado */
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    margin: 0; /* Asegura que no haya margen alrededor del body */
 }
 
-/* Contenedor del formulario */
-.classrom {
+/* Contenedor principal del formulario */
+div {
     background-color: white;
-    padding: 40px 50px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    transform: translateY(50px);
-    opacity: 0;
-    animation: slideUp 1s forwards; /* Animación de entrada */
 }
 
-/* Animación de entrada */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Logo */
-.classrom .logo {
+/* Estilo del logo */
+img {
     width: 120px;
     margin-bottom: 30px;
-    animation: fadeIn 1.5s ease-in-out; /* Efecto de desvanecimiento en el logo */
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Estilos para las etiquetas */
+/* Estilo de los elementos de formulario */
 label {
-    font-size: 18px;
-    margin-bottom: 10px;
     display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
     color: #333;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
 }
 
-/* Estilos para los campos de entrada */
-input[type="text"],
-input[type="password"] {
+/* Estilo de los inputs */
+input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambio de estilo al hacer focus en los inputs */
+input:focus {
+    border-color: #3498db;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #ff77e9;
-    box-shadow: 0 0 10px rgba(255, 119, 233, 0.5);
-}
-
-/* Estilos para el botón de login */
+/* Estilo del botón de login */
 button {
-    background-color: #6e7dff;
+    background-color: #3498db;
     color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 18px;
-    border-radius: 50px;
-    cursor: pointer;
     width: 100%;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Estilo del botón al pasar el ratón (hover) */
 button:hover {
-    background-color: #ff77e9;
-    transform: translateY(-5px);
+    background-color: #2980b9;
 }
 
-/* Estilos para el texto del pie de página */
-.footer-text {
-    margin-top: 30px;
+/* Estilo del texto del enlace */
+p {
+    margin-top: 20px;
     font-size: 14px;
-    color: #888;
+    color: #777;
 }
 
-.footer-text a {
-    color: #6e7dff;
+a {
+    color: #3498db;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-.footer-text a:hover {
-    color: #ff77e9;
+/* Estilo del enlace al pasar el ratón (hover) */
+a:hover {
+    text-decoration: underline;
 }
 
-/* Estilos para dispositivos pequeños */
-@media (max-width: 600px) {
-    .classrom {
-        width: 90%;
-        padding: 30px;
+/* Mensaje de error (mensaje oculto inicialmente) */
+#msg {
+    font-size: 15px;
+    color: red;
+    display: none; /* Asegura que el mensaje esté oculto por defecto */
+}
+
+/* Estilo adicional para el enlace si es necesario en móviles */
+@media screen and (max-width: 480px) {
+    div {
+        padding: 20px;
     }
 
-    .classrom .logo {
-        width: 100px;
+    button {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
     }
 }

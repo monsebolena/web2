@@ -1,27 +1,20 @@
-var inputPass = document.getElementById("password");
-var inputRePass = document.getElementById("repassword");
-var btnCrear = document.getElementById("btnCrear");
+var inputPass=document.getElementById("password");
+var inputRePass=document.getElementById("repassword");
+var btnCrear=document.getElementById("btnCrear");
+var msg=document.getElementById("msg");
 
-inputPass.oninput = function() {
-    var txtPass = inputPass.value;
-    var txtRepass = inputRePass.value;
+inputPass.oninput=validacionInput;
+inputRePass.oninput=validacionInput;
 
-    if (txtPass === txtRepass && txtPass !== "") {
-        btnCrear.disabled = false;
-    } else {
-        btnCrear.disabled = true;
+function validacionInput(){
+    var txtPass=inputPass.value;
+    var txtRePass=inputRePass.value;
+    if(txtPass==txtRePass){
+        btnCrear.disabled=false;
+        msg.style.display="none";
+    }else{
+        btnCrear.disabled=true;
+        msg.style.display="block";
     }
-    console.log(txtPass);
-};
-
-inputRePass.oninput = function() {
-    var txtPass = inputPass.value;
-    var txtRepass = inputRePass.value;
-
-    if (txtPass === txtRepass && txtPass !== "") {
-        btnCrear.disabled = false;
-    } else {
-        btnCrear.disabled = true;
-    }
-    console.log(txtRepass);
-};
+    //console.log(txtPass);
+}
