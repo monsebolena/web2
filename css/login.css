@@ -1,5 +1,4 @@
-/* Reset CSS básico */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,97 +7,131 @@
 /* Fondo de la página */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
+    background: linear-gradient(135deg, #6e7dff, #ff77e9); /* Fondo degradado */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Contenedor del formulario */
 .classrom {
     background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 1s forwards; /* Animación de entrada */
+}
+
+/* Animación de entrada */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Logo */
-.classrom img {
-    width: 150px;
-    margin-bottom: 20px;
+.classrom .logo {
+    width: 120px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out; /* Efecto de desvanecimiento en el logo */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Estilos para las etiquetas */
 label {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 10px;
     display: block;
     color: #333;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 /* Estilos para los campos de entrada */
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #5f9ea0;
-    outline: none;
+    border-color: #ff77e9;
+    box-shadow: 0 0 10px rgba(255, 119, 233, 0.5);
 }
 
 /* Estilos para el botón de login */
 button {
-    background-color: #5f9ea0;
+    background-color: #6e7dff;
     color: white;
     border: none;
     padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 18px;
+    border-radius: 50px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #4e8b82;
+    background-color: #ff77e9;
+    transform: translateY(-5px);
 }
 
 /* Estilos para el texto del pie de página */
 .footer-text {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 14px;
     color: #888;
 }
 
 .footer-text a {
-    color: #5f9ea0;
+    color: #6e7dff;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .footer-text a:hover {
-    text-decoration: underline;
+    color: #ff77e9;
 }
 
 /* Estilos para dispositivos pequeños */
 @media (max-width: 600px) {
     .classrom {
         width: 90%;
-        padding: 20px;
+        padding: 30px;
     }
 
-    .classrom img {
-        width: 120px;
+    .classrom .logo {
+        width: 100px;
     }
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 2 - Registro</title>
+    <link rel="stylesheet" href="css/login.css"> <!-- Enlazamos el archivo CSS -->
+</head>
+<body>
+    <div class="classrom">
+        <!-- Logo -->
+        <img src="img/Logo.png" alt="Logo" class="logo">
+        
+        <!-- Formulario de registro -->
+        <form action="" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required>
+            
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" required>
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+
+        <!-- Enlace al login -->
+        <div class="footer-text">
+            <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+</body>
+</html>
