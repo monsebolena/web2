@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web2 - Contacto</title>
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+
+<body>
+    <div>
+        <a href="index.html"><img src="img/Logo.png" alt="Logo"></a>
+        <form action="/enviar_formulario" method="POST" id="formContacto">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Ingresa tu nombre">
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" required placeholder="Ingresa tu correo electrónico">
+
+            <label for="comentarios">Comentarios</label>
+            <textarea name="comentarios" id="comentarios" rows="4" placeholder="Escribe tus comentarios"></textarea>
+
+            <!-- Checkbox para aceptar los términos y condiciones -->
+            <label>
+                <input type="checkbox" name="terminos" id="terminos" required>
+                Acepto los <a href="terminos.html">términos y condiciones</a>.
+            </label><br>
+
+            <button type="submit" disabled>Enviar</button>
+        </form>
+        <p>Si necesitas ayuda, <a href="index.html">vuelve al inicio</a></p>
+    </div>
+
+    <script>
+        // Obtener el checkbox y el botón de enviar
+        var checkTerms = document.getElementById("terminos");  // Usamos el id 'terminos' del checkbox
+        var submitButton = document.querySelector("button[type='submit']");  // Seleccionamos el botón de enviar
+
+        // Verificar el estado del checkbox al hacer clic
+        checkTerms.onclick = function() {
+            // Si el checkbox está marcado, habilitar el botón de envío
+            if (checkTerms.checked) {
+                submitButton.disabled = false;  // Habilitar botón
+            } else {
+                submitButton.disabled = true;   // Deshabilitar botón
+            }
+        };
+
+        // Validación automática por HTML5
+        const form = document.getElementById('formContacto');
+
+        form.addEventListener('submit', (event) => {
+            // Revisa si el formulario no es válido (si algún campo requerido está vacío o el checkbox no está marcado)
+            if (!form.checkValidity()) {
+                // Si no es válido, se evita el envío del formulario
+                event.preventDefault();
+                // Mostrar mensaje personalizado en caso de que el navegador no lo haga automáticamente
+                alert("Por favor, rellena los campos obligatorios.");
+            }
+        });
+    </script>
+</body>
+
+</html>
+
