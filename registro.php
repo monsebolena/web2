@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST["nombre"])){
+    var_dump($_GET);
+    var_dump($_POST);
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,7 +34,7 @@
             <span id="msg">*Las contraseñas deben ser iguales</span>
             <button id="btnCrear" disabled>Crear usuario</button>
         </form>
-        <p>*Si tienes usuario <a href="login.html">logeate</a></p>
+        <p>*Si tienes usuario <a href="login.php">logeate</a></p>
     </div>
 
 <script src="js/registro.js"></script>
